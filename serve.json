@@ -1,0 +1,7 @@
+{
+  "directoryListing": false,
+  "public": "dist/gateways-ui",
+  "rewrites": [
+    { "source": "/**", "destination": "/index.html" }
+  ]
+}

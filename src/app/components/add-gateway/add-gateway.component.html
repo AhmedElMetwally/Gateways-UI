@@ -1,0 +1,48 @@
+<mat-form-field class="example-form-field">
+  <mat-label>Serial</mat-label>
+  <input matInput type="text" [(ngModel)]="serial" />
+  <button
+    *ngIf="serial"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="serial = ''"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<br />
+<mat-form-field class="example-form-field">
+  <mat-label>IP</mat-label>
+  <input matInput type="text" [(ngModel)]="ip" />
+  <button
+    *ngIf="ip"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="ip = ''"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<br />
+
+<mat-form-field class="example-form-field">
+  <mat-label>Name</mat-label>
+  <input matInput type="text" [(ngModel)]="name" />
+  <button
+    *ngIf="name"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="name = ''"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<br>
+
+<button mat-raised-button (click)="save()">Save</button>

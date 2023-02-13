@@ -1,0 +1,28 @@
+<mat-form-field class="example-form-field">
+  <mat-label>Vendor</mat-label>
+  <input matInput type="text" [(ngModel)]="vendor" />
+  <button
+    *ngIf="vendor"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="vendor = ''"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<br />
+
+<mat-form-field appearance="fill">
+  <mat-label>Status</mat-label>
+  <mat-select [(ngModel)]="status" name="status">
+    <mat-option *ngFor="let _status of statuses" [value]="_status">
+      {{ _status }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br />
+
+<button mat-raised-button (click)="save()">Save</button>

@@ -1,0 +1,35 @@
+<button style="margin: 10px" mat-raised-button routerLink="/gateways/{{_id}}/add-gateway-device">Add Device</button>
+
+<div *ngIf="gateway" class="devices-parent">
+  <table mat-table [dataSource]="gateway.devices" class="mat-elevation-z8">
+    <ng-container matColumnDef="uid">
+      <th mat-header-cell *matHeaderCellDef>UID</th>
+      <td mat-cell *matCellDef="let element">{{ element.uid }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="vendor">
+      <th mat-header-cell *matHeaderCellDef>Vendor</th>
+      <td mat-cell *matCellDef="let element">{{ element.vendor }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Created At</th>
+      <td mat-cell *matCellDef="let element">{{ element.createdAt | date: 'long' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button (click)="deleteDevice(element._id)">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
